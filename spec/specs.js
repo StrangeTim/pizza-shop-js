@@ -6,4 +6,10 @@ describe('PizzaShoppe', function() {
     expect(pizzaTest.order).to.eql([]);
   });
 
+  it('adds items to the order', function() {
+    var pizzaTest = new PizzaShoppe("Steve's Roadkill Express");
+    pizzaTest.addToOrder("cheese");
+    expect(pizzaTest.order).to.eql(["cheese"]);
+  });
+
 });
