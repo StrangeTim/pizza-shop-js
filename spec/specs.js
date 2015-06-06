@@ -8,8 +8,35 @@ describe('PizzaShoppe', function() {
 
   it('adds items to the order', function() {
     var pizzaTest = new PizzaShoppe("Steve's Roadkill Express");
-    pizzaTest.addToOrder("cheese");
+    pizzaTest.addItem("cheese");
     expect(pizzaTest.order).to.eql(["cheese"]);
   });
 
+  it('removes an item from the order', function() {
+    var pizzaTest = new PizzaShoppe("Steve's Roadkill Express");
+    pizzaTest.addItem("cheese");
+    pizzaTest.addItem("anchovies");
+    pizzaTest.addItem("pepperoni");
+    pizzaTest.removeItem("anchovies");
+    expect(pizzaTest.order).to.eql(["cheese", "pepperoni"]);
+  });
+
+  it('adds multiple items to an order at the same time', function() {
+    var pizzaTest = new PizzaShoppe("Steve's Roadkill Express");
+    pizzaTest.addItem(['large', 'mozzarella', 'pepperoni', 'red onion', 'bacon']);
+    expect(pizzaTest.order).to.eql(['large', 'mozzarella', 'pepperoni', 'red onion', 'bacon']);
+  });
+
 });
+
+// describe('orderTotal', function() {
+//
+//   it('calculates the total price of an order', function() {
+//     var pizzaTest = new PizzaShoppe("Steve's Roadkill Express");
+//     pizzaTest.addItem("cheese");
+//     pizzaTest.addItem("anchovies");
+//     pizzaTest.addItem("pepperoni");
+//     pizzaTest.addItem("pepperoni");
+//   });
+//
+// });
