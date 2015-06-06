@@ -26,24 +26,24 @@ function Customer(name) {
 }
 
 function orderTotal(customer) {
-  // CRUSTS = pan-1, deep dish-2, thin crust-3
+  // CRUSTS = {1: 'Pan', 2: 'Deep dish', 3: 'Thin Crust'};
   //
-  // SIZES = personal-11, small-12, medium-13, large-14, x-large-15
+  // SIZES = {11: 'Personal', 12: 'Small', 13: 'Medium', 14: 'Large', 15: 'Extra Large'};
   //
-  // SAUCES = tomato-21, olive oil-22, white-23
+  // SAUCES = {21: 'Tomato Sauce', 22: 'Olive Oil', 23: 'Alfredo Sauce'};
   //
-  // CHEESES = mozzarella-31,  provolone-32,  parmesan-33,
-  //           ricotta-34, colby-35,  gruyere-36, gouda-37
+  // CHEESES = {31: 'Mozzarella',  32: 'Provolone', 33: 'Parmesan',
+  //            34: 'Ricotta', 35: 'Colby', 36: 'Gruyere', 37: 'Gouda'};
   //
-  // MEATS = pepperoni-41, italian sausage-42, salami-43, ham-44,
-  //         meatballs-45,  bacon-46, chicken-47,  beef-48,
-  //         pork-49,  anchovies-50,  turkey-51
+  // MEATS = {41: 'Pepperoni', 42: 'Italian Sausage', 43: 'Salami', 44: 'Ham',
+  //          45: 'Meatballs', 46: 'Bacon', 47: 'Chicken', 48: 'Beef',
+  //          49: 'Pork', 50: 'Anchovies', 51: 'Turkey'};
   //
-  // VEGGIES = mushrooms-61,  red onion-62,  spinach-63,  tomato-64,
-  //           green pepper-65,  black olives-66,  green olives-67,
-  //           jalapenos-68,  cherry peppers-69,  pineapple-70
-  //
+  // VEGGIES = {61: 'Mushrooms', 62: 'Red Onion', 63: 'Spinach', 64: 'Tomato',
+  //            65: 'Green Pepper', 66: 'Black Olives', 67: 'Green Olives',
+  //            66: 'Jalapenos', 69: 'Cherry Peppers', 70: 'Pineapple'};
 
+  //  Key numbers in PRICES below match to key numbers in items above
   var PRICES = {1: 1, 2: 2, 3: 1, 11: 4, 12: 5, 13: 7, 14: 9, 15: 11,
                 21: 0, 22: 0, 23: 0, 31: 0.5, 32: 0.5, 33: 0.5, 34: 0.5,
                 35: 0.5, 36: 1, 37: 1.5, 41: 1, 42: 1, 43: 1, 44: 0.5,
@@ -64,4 +64,47 @@ function orderTotal(customer) {
   return price;
 }
 
-//------------- PROGRAM SPECIFIC FUNCTIONALILTY ABOVE. DISPLAY SPECIFIC FUNCTIONALITY BELOW -----------------
+
+//----- PROGRAM SPECIFIC FUNCTIONALILTY ABOVE. DISPLAY SPECIFIC FUNCTIONALITY BELOW -------
+
+// the function below exists only to more easily list out options
+// on the web page.
+function pizzaOptions(category) {
+
+  // variableName = pizzaOptions('varName2')
+  // for (item in variableName) { console.log(variableName[item]) }
+
+  if (category === 'crusts') {
+    return ['Pan', 'Deep dish', 'Thin Crust'];
+  }
+
+  if (category === 'sizes') {
+    return ['Personal', 'Small', 'Medium', 'Large', 'Extra Large'];
+  }
+
+  if (category === 'sauces') {
+    return ['Tomato Sauce', 'Olive Oil', 'Alfredo Sauce'];
+  }
+
+  if (category === 'cheeses') {
+    return ['Mozzarella',  'Provolone', 'Parmesan',
+            'Ricotta', 'Colby', 'Gruyere', 'Gouda'];
+  }
+
+  if (category === 'cheeses') {
+    return ['Pepperoni', 'Italian Sausage', 'Salami', 'Ham',
+            'Meatballs', 'Bacon', 'Chicken', 'Beef',
+            'Pork', 'Anchovies', 'Turkey'];
+  }
+
+  if (category === 'cheeses') {
+    return ['Mushrooms', 'Red Onion', 'Spinach', 'Tomato',
+            'Green Pepper', 'Black Olives', 'Green Olives',
+            'Jalapenos', 'Cherry Peppers', 'Pineapple'];
+  }
+}
+
+
+$(function(){
+  
+});

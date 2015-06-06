@@ -1,3 +1,16 @@
+#welcome {
+  height: 1000px;
+  background-image: url("./images/food-pyramid-pizza.jpg");
+  background-position: center 200px;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  text-align: center;
+}
+
+#delivery {
+  display: none;
+}
+
 #crust {
   display: none;
 }
