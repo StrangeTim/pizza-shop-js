@@ -47,8 +47,8 @@ function orderTotal(shop) {
 
   for(var item in order) {
     for(var option in OPTIONS) {
-      if (option.hasOwnProperty(item)) {
-        price += option[item];
+      if (OPTIONS[option].hasOwnProperty(order[item])) {
+        price += OPTIONS[option][order[item]];
       }
     }
   }
