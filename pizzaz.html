@@ -8,30 +8,35 @@
     <script src="js/scripts.js"></script>
     <title>Roadkill Pizza</title>
   </head>
-  <body background="./css/images/bgimage.jpg">
+  <body>
     <div class="container">
-
+      <br><br>
+      <div class="minimizedDiv" id="welcome2">
+        Delivery or Pickup Options
+      </div>
       <div id="welcome">
-        <br><br>
         <h1>Welcome to Steve's Famous Roadkill Pizza</h1>
-        <div id="player-select">
-          <h2>Will your order be for</h2>
-          <form id="select-action">
-            <label for="number-players">Delivery or Pickup?</label>
-            <select id="number-players">
-              <option value="0"></option>
-              <option value="1">Delivery</option>
-              <option value="2">Pickup</option>
-            </select>
-            <br><br><br>
-            <button type="submit" class="btn btn-info" id="submit-pickup"> Start my order! </button>
-          </form>
-        </div>
+        <br>
+        <form id="select-action">
+        <h3>Will <input type='text' id="customer" placeholder='your name here' size='13' required />'s order be for</h3>
+          <h3><label for="pickup-delivery">Delivery or Pickup?</label></h3>
+          <select id="pickup-delivery">
+            <option value="undecided"></option>
+            <option value="delivery">Delivery</option>
+            <option value="pickup">Pickup</option>
+          </select>
+          <br><br><br>
+          <button type="submit" class="btn btn-info" id="submit-pickup"> Start my order! </button>
+        </form>
+      </div>
 
+      <div class="minimizedDiv" id="crust2">
+        Crust Options
       </div>
       <div id="crust">
-
+        <h3>Choose Crusts</h3>
       </div>
+
 
     </div>
   </body>

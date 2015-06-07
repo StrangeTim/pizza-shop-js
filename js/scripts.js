@@ -104,7 +104,46 @@ function pizzaOptions(category) {
   }
 }
 
+// This function, when used properly, keeps only one div fully shown.
+function showDiv(selector, visDivs) {
+  var hideDivs = [];
+  for(div in visDivs) {
+    if (visDivs[div] !== selector) {
+      hideDivs.push(visDivs[div]);
+    }
+  }
+  for(div in hideDivs) {
+    oneDiv = hideDivs[div];
+    $(oneDiv).hide();
+    setTimeout(function(){$(oneDiv + "2").slideDown()}, 300);
+  }
+  $(selector + "2").slideUp();
+  setTimeout(function(){$(selector).slideDown()}, 300);
+}
+
 
 $(function(){
-  
+  var customer = NaN;
+  var pickupDelivery = NaN;
+  var visibleDivs = ['#welcome'];
+
+
+  //Get welcome info, switch to crust/size display
+  $('#submit-pickup').click(function(event) {
+    event.preventDefault();
+    var customerName = document.getElementById('customer');
+    customer = new Customer(customerName);
+    var choice = document.getElementById("pickup-delivery");
+    pickupDelivery = choice.options[choice.selectedIndex].value;
+    visibleDivs.push('#crust');
+    showDiv('#crust', visibleDivs);
+
+  });
+  $('#customerName').text(customer.customerName);
+
+  // Re-display welcome screen on click
+  $('#welcome2').click(function() {
+    showDiv('#welcome', visibleDivs);
+  });
+
 });
