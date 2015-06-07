@@ -115,9 +115,10 @@ function showDiv(selector, visDivs) {
   for(div in hideDivs) {
     oneDiv = hideDivs[div];
     $(oneDiv).hide();
-    setTimeout(function(){$(oneDiv + "2").slideDown()}, 300);
+    $(oneDiv + "2").slideDown(300);
   }
   $(selector + "2").slideUp();
+  $(selector + "2").css("height", "30px");
   setTimeout(function(){$(selector).slideDown()}, 300);
 }
 
@@ -131,19 +132,36 @@ $(function(){
   //Get welcome info, switch to crust/size display
   $('#submit-pickup').click(function(event) {
     event.preventDefault();
-    var customerName = document.getElementById('customer');
+    var customerName = document.getElementById('customer').value;
     customer = new Customer(customerName);
     var choice = document.getElementById("pickup-delivery");
     pickupDelivery = choice.options[choice.selectedIndex].value;
     visibleDivs.push('#crust');
     showDiv('#crust', visibleDivs);
-
+    $('#customerName').text(customer.customerName);
   });
-  $('#customerName').text(customer.customerName);
 
   // Re-display welcome screen on click
   $('#welcome2').click(function() {
     showDiv('#welcome', visibleDivs);
+  });
+
+  $('#crustSizeSelect').click(function() {
+    visibleDivs.push('#sauce');
+    showDiv('#sauce', visibleDivs);
+  });
+
+  $('#crust2').click(function() {
+    showDiv('#crust', visibleDivs);
+  });
+  
+  $('#sauceSelect').click(function() {
+    visibleDivs.push('#cheese');
+    showDiv('#cheese', visibleDivs);
+  });
+
+  $('#sauce2').click(function() {
+    showDiv('#sauce', visibleDivs);
   });
 
 });

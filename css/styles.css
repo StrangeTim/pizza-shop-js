@@ -1,15 +1,15 @@
 #welcome {
   height: 750px;
   background-image: url("./images/food-pyramid-pizza.jpg");
-  background-position: center 300px;
+  background-position: center 260px;
   background-repeat: no-repeat;
-  background-size: 60%;
+  background-size: 64%;
   text-align: center;
   /*display: none;*/
 }
 
 .minimizedDiv {
-  height: 27px;
+  height: 30px;
   font-size: 20spx;
   background-color: #444;
   color: #f00;
@@ -25,12 +25,17 @@
   height: 750px;
   background-image: url("./images/pizza-crust.jpg");
   background-repeat: no-repeat;
-  background-size: 80%;
+  background-size: 73%;
   background-position: 100% 0px;
   display: none;
 }
 
 #sauce {
+  height: 750px;
+  background-image: url("./images/pizza-sauce.jpg");
+  background-repeat: no-repeat;
+  background-size: 73%;
+  background-position: 100% 0px;
   display: none;
 }
 

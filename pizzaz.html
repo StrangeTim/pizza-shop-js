@@ -30,11 +30,53 @@
         </form>
       </div>
 
+
       <div class="minimizedDiv" id="crust2">
         Crust Options
       </div>
       <div id="crust">
-        <h3>Choose Crusts</h3>
+        <h3>Ok, <span id="customerName"></span> let's get started...</h3>
+        <br>
+        What type of crust would you like?
+        <form id="crustSelect">
+          <input type="radio" name="crustSelect" value="1" id="Pan" checked> Traditional Pan Pizza
+          <br>
+          <input type="radio" name="crustSelect" value="2" id="Deep Dish"> Deep Dish
+          <br>
+          <input type="radio" name="crustSelect" value="3" id="Thin Crust"> Thin Crust
+        </form>
+        <br>
+        <h3>And how big are we talking?</h3>
+        <form id="sizeSelect">
+          <input type="radio" name="sizeSelect" value="11" id="personal"> Personal Sized
+          <br>
+          <input type="radio" name="sizeSelect" value="12" id="small"> 10" Small
+          <br>
+          <input type="radio" name="sizeSelect" value="13" id="medium"> 12" Medium
+          <br>
+          <input type="radio" name="sizeSelect" value="14" id="large"> 14" Large
+          <br>
+          <input type="radio" name="sizeSelect" value="15" id="extra large"> 16" Extra Large
+        </form>
+        <br>
+        <button type="button" class="btn btn-success" id="crustSizeSelect"> To Sauces! </button>
+      </div>
+
+
+      <div class="minimizedDiv" id="sauce2">
+        Sauces!
+      </div>
+      <div id="sauce">
+        <h3>Slather on some:</h3>
+        <form id="sizeSelect">
+          <input type="radio" name="sizeSelect" value="21" id="Tomato Sauce"> Tomato Sauce
+          <br>
+          <input type="radio" name="sizeSelect" value="22" id="Olive Oil"> Olive Oil
+          <br>
+          <input type="radio" name="sizeSelect" value="23" id="Alfredo"> Alfredo Sauce
+        </form>
+        <br>
+        <button type="button" class="btn btn-primary" id="sauceSelect"> Next </button>
       </div>
 
 
