@@ -23,6 +23,10 @@ function Customer(name) {
     }
   }
 
+  this.clearOrder = function() {
+    this.order = [];
+  }
+
 }
 
 function orderTotal(customer) {
@@ -67,43 +71,6 @@ function orderTotal(customer) {
 
 //----- PROGRAM SPECIFIC FUNCTIONALILTY ABOVE. DISPLAY SPECIFIC FUNCTIONALITY BELOW -------
 
-// the function below exists only to more easily list out options
-// on the web page.
-function pizzaOptions(category) {
-
-  // variableName = pizzaOptions('varName2')
-  // for (item in variableName) { console.log(variableName[item]) }
-
-  if (category === 'crusts') {
-    return ['Pan', 'Deep dish', 'Thin Crust'];
-  }
-
-  if (category === 'sizes') {
-    return ['Personal', 'Small', 'Medium', 'Large', 'Extra Large'];
-  }
-
-  if (category === 'sauces') {
-    return ['Tomato Sauce', 'Olive Oil', 'Alfredo Sauce'];
-  }
-
-  if (category === 'cheeses') {
-    return ['Mozzarella',  'Provolone', 'Parmesan',
-            'Ricotta', 'Colby', 'Gruyere', 'Gouda'];
-  }
-
-  if (category === 'cheeses') {
-    return ['Pepperoni', 'Italian Sausage', 'Salami', 'Ham',
-            'Meatballs', 'Bacon', 'Chicken', 'Beef',
-            'Pork', 'Anchovies', 'Turkey'];
-  }
-
-  if (category === 'cheeses') {
-    return ['Mushrooms', 'Red Onion', 'Spinach', 'Tomato',
-            'Green Pepper', 'Black Olives', 'Green Olives',
-            'Jalapenos', 'Cherry Peppers', 'Pineapple'];
-  }
-}
-
 // This function, when used properly, keeps only one div fully shown.
 function showDiv(selector, visDivs) {
   var hideDivs = [];
@@ -146,7 +113,7 @@ $(function(){
     showDiv('#welcome', visibleDivs);
   });
 
-  $('#crustSizeSelect').click(function() {
+  $('#crustSizeSelectBtn').click(function() {
     visibleDivs.push('#sauce');
     showDiv('#sauce', visibleDivs);
   });
@@ -154,8 +121,12 @@ $(function(){
   $('#crust2').click(function() {
     showDiv('#crust', visibleDivs);
   });
-  
-  $('#sauceSelect').click(function() {
+
+  $('#sauceSelect').onclick = function(event) {
+  event.preventDefault();
+  };
+
+  $('#sauceSelectBtn').click(function() {
     visibleDivs.push('#cheese');
     showDiv('#cheese', visibleDivs);
   });
@@ -163,5 +134,58 @@ $(function(){
   $('#sauce2').click(function() {
     showDiv('#sauce', visibleDivs);
   });
+
+  $('#cheeseSelect').onclick = function(event) {
+  event.preventDefault();
+  };
+
+  $('#cheeseSelectBtn').click(function() {
+    visibleDivs.push('#meat');
+    showDiv('#meat', visibleDivs);
+  });
+
+  $('#cheese2').click(function() {
+    showDiv('#cheese', visibleDivs);
+  });
+
+  $('#meatSelect').onclick = function(event) {
+  event.preventDefault();
+  };
+
+  $('#meatSelectBtn').click(function() {
+    visibleDivs.push('#veggies');
+    showDiv('#veggies', visibleDivs);
+  });
+
+  $('#meat2').click(function() {
+    showDiv('#meat', visibleDivs);
+  });
+
+  $('#veggiesSelect').onclick = function(event) {
+  event.preventDefault();
+  };
+
+  $('#veggiesSelectBtn').click(function() {
+    visibleDivs.push('#price');
+    showDiv('#price', visibleDivs);
+    getIngredients();
+    var price = orderTotal(customer);
+    $('#priceTotal').text(price);
+  });
+
+  $('#veggies2').click(function() {
+    showDiv('#veggies', visibleDivs);
+  });
+
+  function getIngredients() {
+    customer.clearOrder();
+    var crust = $('input[type=radio]:checked', '#crustSelect').val();
+    var size = $('input[type=radio]:checked', '#sizeSelect').val();
+    var sauce = $('input[type=radio]:checked', '#sauceSelect').val();
+    customer.addItem([crust, size, sauce]);
+    $('input[type=checkbox]:checked').each(function() {
+      customer.addItem($(this).val());
+    });
+  }
 
 });

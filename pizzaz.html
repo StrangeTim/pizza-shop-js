@@ -39,27 +39,27 @@
         <br>
         What type of crust would you like?
         <form id="crustSelect">
-          <input type="radio" name="crustSelect" value="1" id="Pan" checked> Traditional Pan Pizza
+          <input type="radio" name="Pan" value="1" id="crustSel" checked> Traditional Pan Pizza
           <br>
-          <input type="radio" name="crustSelect" value="2" id="Deep Dish"> Deep Dish
+          <input type="radio" name="Deep Dish" value="2" id="crustSel"> Deep Dish
           <br>
-          <input type="radio" name="crustSelect" value="3" id="Thin Crust"> Thin Crust
+          <input type="radio" name="Thin Crust" value="3" id="crustSel"> Thin Crust
         </form>
         <br>
         <h3>And how big are we talking?</h3>
         <form id="sizeSelect">
-          <input type="radio" name="sizeSelect" value="11" id="personal"> Personal Sized
+          <input type="radio" name="personal" value="11" id="sizeSel"> Personal Sized
           <br>
-          <input type="radio" name="sizeSelect" value="12" id="small"> 10" Small
+          <input type="radio" name="small" value="12" id="sizeSel"> 10" Small
           <br>
-          <input type="radio" name="sizeSelect" value="13" id="medium"> 12" Medium
+          <input type="radio" name="medium" value="13" id="sizeSel"> 12" Medium
           <br>
-          <input type="radio" name="sizeSelect" value="14" id="large"> 14" Large
+          <input type="radio" name="large" value="14" id="sizeSel"> 14" Large
           <br>
-          <input type="radio" name="sizeSelect" value="15" id="extra large"> 16" Extra Large
+          <input type="radio" name="extra large" value="15" id="sizeSel"> 16" Extra Large
         </form>
         <br>
-        <button type="button" class="btn btn-success" id="crustSizeSelect"> To Sauces! </button>
+        <button type="button" class="btn btn-success" id="crustSizeSelectBtn"> To Sauces! </button>
       </div>
 
 
@@ -68,18 +68,113 @@
       </div>
       <div id="sauce">
         <h3>Slather on some:</h3>
-        <form id="sizeSelect">
-          <input type="radio" name="sizeSelect" value="21" id="Tomato Sauce"> Tomato Sauce
+        <form id="sauceSelect">
+          <input type="radio" name="Tomato Sauce" value="21" id="sauceSel"> Tomato Sauce
           <br>
-          <input type="radio" name="sizeSelect" value="22" id="Olive Oil"> Olive Oil
+          <input type="radio" name="Olive Oil" value="22" id="sauceSel"> Olive Oil
           <br>
-          <input type="radio" name="sizeSelect" value="23" id="Alfredo"> Alfredo Sauce
+          <input type="radio" name="Alfredo" value="23" id="sauceSel"> Alfredo Sauce
         </form>
         <br>
-        <button type="button" class="btn btn-primary" id="sauceSelect"> Next </button>
+        <button type="button" class="btn btn-primary" id="sauceSelectBtn"> Next </button>
       </div>
 
 
+      <div class="minimizedDiv" id="cheese2">
+        Ooey Gooey Cheese Choices
+      </div>
+      <div id="cheese">
+        <h3>Stuff to be melted:</h3>
+        <h4>(psst: You can have as many as you want.)</h4>
+        <h4>(I won't tell if you don't.)</h4>
+        <form id="cheeseSelect">
+          <input type="checkbox" name="cheeseSelect[]" value="31" id="cheeseSel"> Mozzarella
+          <br>
+          <input type="checkbox" name="cheeseSelect[]" value="32" id="cheeseSel"> Provolone
+          <br>
+          <input type="checkbox" name="cheeseSelect[]" value="33" id="cheeseSel"> Parmesan
+          <br>
+          <input type="checkbox" name="cheeseSelect[]" value="34" id="cheeseSel"> Ricotta
+          <br>
+          <input type="checkbox" name="cheeseSelect[]" value="35" id="cheeseSel"> Colby
+          <br>
+          <input type="checkbox" name="cheeseSelect[]" value="36" id="cheeseSel"> Gruyere
+          <br>
+          <input type="checkbox" name="cheeseSelect[]" value="37" id="cheeseSel"> Gouda
+        </form>
+        <br>
+        <button type="button" class="btn btn-danger" id="cheeseSelectBtn"> Up Next: Meat! </button>
+      </div>
+
+
+      <div class="minimizedDiv" id="meat2">
+        For the Carnivores
+      </div>
+      <div id="meat">
+        <form id="meatSelect">
+          <input type="checkbox" name="meatSelect[]" value="41" id="meatSel"> Pepperoni
+          <br>
+          <input type="checkbox" name="meatSelect[]" value="42" id="meatSel"> Italian Sausage
+          <br>
+          <input type="checkbox" name="meatSelect[]" value="43" id="meatSel"> Salami
+          <br>
+          <input type="checkbox" name="meatSelect[]" value="44" id="meatSel"> Ham
+          <br>
+          <input type="checkbox" name="meatSelect[]" value="45" id="meatSel"> Meatballs
+          <br>
+          <input type="checkbox" name="meatSelect[]" value="46" id="meatSel"> Bacon
+          <br>
+          <input type="checkbox" name="meatSelect[]" value="47" id="meatSel"> Chicken
+          <br>
+          <input type="checkbox" name="meatSelect[]" value="48" id="meatSel"> Beef
+          <br>
+          <input type="checkbox" name="meatSelect[]" value="49" id="meatSel"> Pork
+          <br>
+          <input type="checkbox" name="meatSelect[]" value="50" id="meatSel"> Anchovies
+          <br>
+          <input type="checkbox" name="meatSelect[]" value="51" id="meatSel"> Turkey
+        </form>
+        <br>
+        <button type="button" class="btn btn-success" id="meatSelectBtn"> Veggies?!?! </button>
+      </div>
+
+
+      <div class="minimizedDiv" id="veggies2">
+        And for those on the greener side of the plate:
+      </div>
+      <div id="veggies">
+        <form id="veggiesSelect">
+          <input type="checkbox" name="veggiesSelect[]" value="61" id="veggiesSel"> Mushrooms
+          <br>
+          <input type="checkbox" name="veggiesSelect[]" value="62" id="veggiesSel"> Red Onion
+          <br>
+          <input type="checkbox" name="veggiesSelect[]" value="63" id="veggiesSel"> Spinach
+          <br>
+          <input type="checkbox" name="veggiesSelect[]" value="64" id="veggiesSel"> Tomato
+          <br>
+          <input type="checkbox" name="veggiesSelect[]" value="65" id="veggiesSel"> Green Pepper
+          <br>
+          <input type="checkbox" name="veggiesSelect[]" value="66" id="veggiesSel"> Black Olives
+          <br>
+          <input type="checkbox" name="veggiesSelect[]" value="67" id="veggiesSel"> Green Olives
+          <br>
+          <input type="checkbox" name="veggiesSelect[]" value="68" id="veggiesSel"> Jalapenos
+          <br>
+          <input type="checkbox" name="veggiesSelect[]" value="69" id="veggiesSel"> Cherry Peppers
+          <br>
+          <input type="checkbox" name="veggiesSelect[]" value="70" id="veggiesSel"> Pineapple
+        </form>
+        <br>
+        <br>
+        <h3>After all these decisions</h3><h3>you probably want to know</h3><h3>what this will cost.</h3>
+        <button type="button" class="btn btn-success" id="veggiesSelectBtn"> Click Here </button>
+      </div>
+
+
+      <div id="price">
+        <h2>Your grand total is:</h2>
+        $<span id="priceTotal"></span>
+      </div>
     </div>
   </body>
 </html>
